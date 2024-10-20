@@ -64,25 +64,14 @@ class FirstScreen extends StatelessWidget {
       // body: const Center(
       //   child: Text('Hello world!'),
       // ),
-      body: const Column(
+      body: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Text(
-            'Sebuah Judul',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-          ),
-          Text('Lorem ipsum dolor sit amet')
+          Icon(Icons.share),
+          Icon(Icons.thumb_up),
+          Icon(Icons.thumb_down),
         ],
-
       ),
-      
-      // const Row(
-      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //   children: <Widget>[
-      //     Icon(Icons.share),
-      //     Icon(Icons.thumb_up),
-      //     Icon(Icons.thumb_down),
-      //   ],
-      // ),
       // Container(
       //   decoration: BoxDecoration(
       //     color: Colors.red,
@@ -118,52 +107,54 @@ class FirstScreen extends StatelessWidget {
   }
 }
 
-class Heading extends StatelessWidget {
-  const Heading({super.key, required this.text});
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context){
-    return Text(
-      text,
-      style: const TextStyle(
-        fontSize: 24.0,
-        fontWeight: FontWeight.bold,
-      ),
-    );
-  }
-}
 
 
-class BiggerText extends StatefulWidget {
+// class Heading extends StatelessWidget {
+//   const Heading({super.key, required this.text});
 
-  final String text;
-  const BiggerText({super.key, required this.text});
+//   final String text;
 
-  @override
-  _BiggerTextState createState() => _BiggerTextState();
-}
+//   @override
+//   Widget build(BuildContext context){
+//     return Text(
+//       text,
+//       style: const TextStyle(
+//         fontSize: 24.0,
+//         fontWeight: FontWeight.bold,
+//       ),
+//     );
+//   }
+// }
 
-class _BiggerTextState extends State<BiggerText> {
-  double _textSize = 16.0;
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text(
-          widget.text, style: TextStyle(fontSize: _textSize)),
-        ElevatedButton(
-          child: const Text("Perbesar"),
-          onPressed: () {
-            setState(() {
-              _textSize = 32.0;
-            });
-          },
-        )
-      ],
-    );
-  }
-}
+// class BiggerText extends StatefulWidget {
+
+//   final String text;
+//   const BiggerText({super.key, required this.text});
+
+//   @override
+//   BiggerTextState createState() => BiggerTextState();
+// }
+
+// class BiggerTextState extends State<BiggerText> {
+//   double _textSize = 16.0;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Column(
+//       mainAxisAlignment: MainAxisAlignment.center,
+//       children: <Widget>[
+//         Text(
+//           widget.text, style: TextStyle(fontSize: _textSize)),
+//         ElevatedButton(
+//           child: const Text("Perbesar"),
+//           onPressed: () {
+//             setState(() {
+//               _textSize = 32.0;
+//             });
+//           },
+//         )
+//       ],
+//     );
+//   }
+// }
