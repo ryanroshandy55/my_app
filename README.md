@@ -1,6 +1,6 @@
 # my_app
 
-A new Flutter project.
+This repository is created for learning flutter. This is android flutter project learning.
 
 ## Getting Started
 
