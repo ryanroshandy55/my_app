@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CounterDisplay extends StatelessWidget {
   const CounterDisplay({required this.count, super.key});
-  
+
   final int count;
 
   @override
@@ -12,7 +12,7 @@ class CounterDisplay extends StatelessWidget {
 }
 
 class CounterIncrementor extends StatelessWidget {
-  const CounterIncrementor ({required this.onPressed, super.key});
+  const CounterIncrementor({required this.onPressed, super.key});
 
   final VoidCallback onPressed;
 
@@ -26,7 +26,7 @@ class CounterIncrementor extends StatelessWidget {
 }
 
 class CounterDecrementor extends StatelessWidget {
-  const CounterDecrementor ({required this.onPressed, super.key});
+  const CounterDecrementor({required this.onPressed, super.key});
 
   final VoidCallback onPressed;
 
@@ -56,26 +56,23 @@ class _CounterState extends State<Counter> {
   }
 
   void _decrement() {
-    setState( () {
+    setState(() {
       --_counter;
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp (
+    return MaterialApp(
       title: 'Increment and Decrement',
-      home: Scaffold (
+      home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
-        title: const Text("My Program", 
-        style: TextStyle(
-          color: Colors.white)
-          ),
+          title:
+              const Text("My Program", style: TextStyle(color: Colors.white)),
         ),
         body: Center(
-        child: Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               CounterIncrementor(onPressed: _increment),
@@ -95,7 +92,8 @@ void main() {
   runApp(
     const MaterialApp(
       home: Scaffold(
-        body: Center(child: Counter(),
+        body: Center(
+          child: Counter(),
         ),
       ),
     ),
