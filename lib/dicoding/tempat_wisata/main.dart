@@ -40,6 +40,7 @@ class DetailScreen extends StatelessWidget {
                 ),
               ),
             ),
+
             Container(
               margin: const EdgeInsets.symmetric(vertical:16.0),
               child: const Row(
@@ -69,6 +70,7 @@ class DetailScreen extends StatelessWidget {
                 ],
               )
             ),
+            
             Container(
               padding: const EdgeInsets.all(16.0),
               child: const Text(
