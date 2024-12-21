@@ -32,21 +32,32 @@ class _SwitchExampleState extends State<SwitchExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Switch(
-        value: lightOn,
-        onChanged: (bool value) {
-          setState(() {
-            lightOn = value;
-          });
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start, 
+          children: <Widget> [
+            Container(
+              margin: const EdgeInsets.only(left: 12, right: 12),
+              child: Switch(
+                value: lightOn,
+                onChanged: (bool value) {
+                  setState(() {
+                    lightOn = value;
+                  });
 
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(lightOn ? 'Light On' : 'Light Off'),
-              duration: const Duration(seconds: 1),
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(lightOn ? 'Light On' : 'Light Off'),
+                      duration: const Duration(seconds: 1),
+                    ),
+                  );
+                },
+              ),
             ),
-          );
-        },
-      ),
+          ],
+        ),
+      ),      
     );
   }
 }
