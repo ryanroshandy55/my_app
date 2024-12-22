@@ -102,7 +102,13 @@ class DynamicListSeparated extends StatelessWidget {
             ),
           );
         },separatorBuilder: (BuildContext context, int index) {
-          return const Divider();
+          if (index % 2 ==1){
+            return const Divider(
+              thickness: 10,
+            );
+          } else {
+            return const SizedBox.shrink();
+          }
         },
       ),
     );

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/dicoding/list_view/widget/grid_view.dart';
 import 'package:flutter_app/dicoding/list_view/widget/list_view.dart';
-import 'package:flutter_app/dicoding/list_view/widget/list_view_builder.dart';
 import 'package:flutter_app/dicoding/list_view/widget/single_child_scroll_view.dart';
 void main() => runApp(const HomePage());
 
