@@ -22,18 +22,24 @@ class DetailScreen extends StatelessWidget{
                 SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: CircleAvatar(
-                      backgroundColor: const Color.fromARGB(159, 60, 56, 56),
-                      child: IconButton(
-                        color: Colors.white,
-                        icon: const Icon(
-                          Icons.arrow_back,
-                          color: Colors.white
-                        ), 
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                      ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: const Color.fromARGB(159, 60, 56, 56),
+                          child: IconButton(
+                            color: Colors.white,
+                            icon: const Icon(
+                              Icons.arrow_back,
+                              color: Colors.white
+                            ), 
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                        ),
+                      const FavoriteButton(),
+                      ]
                     ),
                   ),
                 )
@@ -122,5 +128,33 @@ class DetailScreen extends StatelessWidget{
         ),
       ),
     );     
+  }
+}
+
+class FavoriteButton extends StatefulWidget {
+  const FavoriteButton({Key? key}) : super(key: key);
+
+  @override
+  _FavoriteButtonState createState() =>  _FavoriteButtonState();
+}
+
+class _FavoriteButtonState extends State<FavoriteButton>{
+  bool isFavorite = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      backgroundColor: const Color.fromARGB(159, 255, 255, 255),
+      child: IconButton(
+          icon: Icon(
+            isFavorite? Icons.favorite : Icons.favorite_border, color: Colors.red,
+            ),
+          onPressed: () {
+            setState( () {
+            isFavorite = !isFavorite;
+          });
+        },
+      )
+    );
   }
 }
